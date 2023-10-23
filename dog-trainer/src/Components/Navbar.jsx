@@ -1,15 +1,14 @@
 import React from "react";
-
+import './Navbar.css';
 
 const NavBar = () => (
     <nav className = "app.navbar">
         <ul className="app.navbar.links">
-            <li className="p.opensans"><a href = "#home">Home</a></li>
-            <li className="p.opensans"><a href = "#sign-in">Sign In/Register</a></li>
-            <li className="p.opensans"><a href = "#about">About</a></li>
-            <li className="p.opensans"><a href = "#contact">contact</a></li>
+            <li className="p.opensans"><a href = "/">Home</a></li>
+            <li className="p.opensans"><a href = "/Login">Login</a></li>
+            <li className="p.opensans"><a href = "/Register">Register</a></li>
+            <li className="p.opensans"><a href = "/contact">Contact</a></li>
         </ul>
-
     </nav>
 )
 export default NavBar;

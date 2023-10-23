@@ -1,0 +1,38 @@
+.App {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+}
+nav {
+    background-color: #333; /* Background color of the navbar */
+    border-style: double;
+    padding: 0%;
+    
+  }
+  
+  /* Navigation List */
+  ul {
+    list-style-type: none; /* Remove bullet points from list items */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  /* List Items (Navigation Links) */
+  li {
+    float: left;
+  }
+  
+  /* Link Styling */
+  li a {
+    display: flex;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 14px 16px; /* Padding around each link */
+    text-decoration: none;
+  }
+  
+  /* Style for the links on hover */
+  li a:hover {
+    background-color: #555; /* Background color on hover */
+  }
