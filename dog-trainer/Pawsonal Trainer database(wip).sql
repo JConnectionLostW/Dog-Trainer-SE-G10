@@ -56,3 +56,15 @@ vidId int,
 petId int,
 foreign key(vidId) references dev(eId),
 foreign key(petId) references Dog(dId),
+);
+
+#table Foods
+create table Foods(
+fId int primary key,
+name varchar(255),
+AllgeryItem varchar(255),
+ptId int,
+svcId int,
+foreign key(ptId) references Dog(dId),
+foreign key(svcId) references Service(sId),
+);
