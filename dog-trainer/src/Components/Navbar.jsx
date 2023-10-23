@@ -7,7 +7,7 @@ const NavBar = () => (
             <li className="p.opensans"><a href = "/">Home</a></li>
             <li className="p.opensans"><a href = "/Login">Login</a></li>
             <li className="p.opensans"><a href = "/Register">Register</a></li>
-            <li className="p.opensans"><a href = "/contact">Contact</a></li>
+            <li className="p.opensans"><a href = "/Account">Account</a></li>
         </ul>
     </nav>
 )

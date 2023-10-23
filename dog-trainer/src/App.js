@@ -6,6 +6,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import HomePage from './Components/HomePage';
 import NavBar from './Components/Navbar';
+import Account from './Components/Account';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<HomePage />}/>
               <Route path ="/Register" element={<Register />} />
               <Route path="/Login" element={<Login />} />
+              <Route path='/Account' element={<Account />} />
             </Routes>
         </Router>
       </div>
