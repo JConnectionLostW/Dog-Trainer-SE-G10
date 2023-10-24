@@ -8,7 +8,22 @@ import HomePage from './Components/HomePage';
 import NavBar from './Components/Navbar';
 import Account from './Components/Account';
 
+
+
 function App() {
+  //This section is still in progress
+  // this sets a token for the login page using useToken
+  // token and setToken
+
+  //set token by getting it from function  
+  const { token, setToken } = useToken();
+
+  //displays Login if token is false
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+//end of wip
+  
   return (
     <div className='App'>
         <NavBar/>
