@@ -1,33 +1,34 @@
 nav {
-  background-color: #333; /* Background color of the navbar */
-  border-style: double;
+  background-color: #444343; 
+  display: flex;
+  border-style: hidden;
   padding: 0%;
-  
+  width: 100%;
 }
 
-/* Navigation List */
+
 ul {
-  list-style-type: none; /* Remove bullet points from list items */
+  list-style-type: none; 
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-/* List Items (Navigation Links) */
+
 li {
   float: left;
 }
 
-/* Link Styling */
+
 li a {
   display: flex;
-  color: white; /* Text color */
+  color: rgb(255, 255, 255); 
   text-align: center;
-  padding: 14px 16px; /* Padding around each link */
+  padding: 14px 16px; 
   text-decoration: none;
 }
 
-/* Style for the links on hover */
+
 li a:hover {
-  background-color: #555; /* Background color on hover */
+  background-color: #555; 
 }
