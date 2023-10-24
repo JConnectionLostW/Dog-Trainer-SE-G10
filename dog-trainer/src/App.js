@@ -19,9 +19,9 @@ function App() {
   const { token, setToken } = useToken();
 
   //displays Login if token is false
-  //if(!token) {
-    //return <Login setToken={setToken} />
-  //}
+  if(!token) {
+    return <Register setToken={setToken} /> //plan to adjust
+  }
 //end of wip
   
   return (
