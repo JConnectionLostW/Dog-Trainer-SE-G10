@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-function Login = () =>{
-  // State to store user input
+function Login(){
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // You would typically perform authentication here
+
     console.log('Username:', username);
     console.log('Password:', password);
   };

@@ -7,7 +7,7 @@ import Register from './Components/Register';
 import HomePage from './Components/HomePage';
 import NavBar from './Components/Navbar';
 import Account from './Components/Account';
-
+import useToken from './Components/useToken';
 
 
 function App() {
@@ -19,9 +19,9 @@ function App() {
   const { token, setToken } = useToken();
 
   //displays Login if token is false
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+  //if(!token) {
+    //return <Login setToken={setToken} />
+  //}
 //end of wip
   
   return (
