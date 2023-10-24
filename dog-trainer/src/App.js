@@ -20,7 +20,7 @@ function App() {
 
   //displays Login if token is false
   if(!token) {
-    return <Login setToken={setToken} />
+    return <Register setToken={setToken} /> //plan to adjust later in future
   }
 //end of wip
   
