@@ -24,6 +24,7 @@ eId int primary key,
 name varchar(255),
 address varchar(255),
 phone int,
+salary int,
 email varchar(255),
 BId int,
 foreign key(BId) references Business(BId)
