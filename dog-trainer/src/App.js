@@ -16,12 +16,12 @@ function App() {
   // token and setToken
 
   //set token by getting it from function  
-  const { token, setToken } = useToken();
+  //const { token, setToken } = useToken();
 
   //displays Login if token is false
-  if(!token) {
-    return <Register setToken={setToken} /> //plan to adjust
-  }
+  //if(!token) {
+  //  return <Register setToken={setToken} /> //plan to adjust
+  //}
 //end of wip
   
   return (

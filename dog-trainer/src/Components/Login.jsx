@@ -27,10 +27,13 @@ export default function Login({setToken}){
     // You would typically perform authentication here
     //console.log('Username:', username); old data
     //console.log('Password:', password); old data
-      username,
-      password
-  });
-  setToken(token);
+     // username,
+      //password
+  ;
+  //setToken(token);
+  Login.propTypes = {
+  setToken: PropTypes.func.isRequired
+}
   };
 
   return (
@@ -59,8 +62,7 @@ export default function Login({setToken}){
       </form>
     </div>
   );
+
 }
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
+

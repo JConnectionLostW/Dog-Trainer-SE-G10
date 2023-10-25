@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
+import Axios from 'axios';
 
 function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegistration = async () => {
+
+  const handleRegistration =() => {
+    Axios.post("http://localhost:8080/create", {
+      username: username, 
+      password: password
+    }).then(()=>{console.log("success");
+  });
+  };
+ /* const handleRegistration = async () => {
     try {
       const response = await fetch('/api/register', {
         method: 'POST',
@@ -25,7 +34,7 @@ function Register() {
       console.error('Error:', error);
     }
   };
-
+*/
   return (
     <div>
       <h1>Registration Page</h1>
@@ -33,7 +42,7 @@ function Register() {
         <div>
           <label>Username:</label>
           <input
-            type="text"
+            type="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
