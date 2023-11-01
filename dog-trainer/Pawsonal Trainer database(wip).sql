@@ -24,8 +24,8 @@ eId int primary key,
 name varchar(255),
 address varchar(255),
 phone int,
-email varchar(255),
 salary int,
+email varchar(255),
 BId int,
 foreign key(BId) references Business(BId)
 );
@@ -68,3 +68,23 @@ svcId int,
 foreign key(ptId) references Dog(dId),
 foreign key(svcId) references Service(sId),
 );
+
+#dummy info for testing
+  
+#Insert data for Customer
+insert into customer
+VALUES 
+	(1, 'Alice Haynes', '461-658-5116', 'ahaynes@email.com'),
+	(2, 'Ryan Johnson', '764-466-1163', 'rjohnson@email.com'),
+	(3, 'Jacob Thompson', '941-664-6618', 'jthompson@email.com'),
+	(4, 'Wally Anderson', '946-648-1665', 'wanderson@email.com'),
+	(5, 'Crystal Summers', '544-646-1616', 'csummers@email.com');
+
+#Insert data for Dog
+INSERT INTO Dog
+VALUES
+		(1, 'Billy', 'pitbull', 1),
+		(2, 'Sally', 'golden retriever', 2),
+		(3, 'Mark', 'pitbull', 3),
+		(4, 'Snowy', 'pitbull', 4), 
+		(5, 'Kent', 'golden retriever', 5); 
