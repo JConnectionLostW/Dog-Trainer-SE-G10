@@ -5,7 +5,7 @@ const SearchBar = () => {
   const [input, setInput] = useState("");
 
   const fetchData = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json()).then((json) => {
+    fetch("http://jsonplaceholder.typicode.com/users").then((response) => response.json()).then((json) => {
       const results = json.filter((user) => {
         return (
           value && user && user.name && user.name.toLowerCase().includes(value)

@@ -15,15 +15,15 @@ app.use(express.json());
 const db = mysql.createConnection({
     user: "root",
     host: "localhost",
-    password: "root66",
-    database: "test_db",
+    password: "root",
+    database: "presentation_db",
 })
 
     app.post('/create', (req, res) => {
         const username = req.body.username;
         const password = req.body.password;
 
-        db.query('INSERT INTO users (username, password) VALUES (?,?)', 
+        db.query('INSERT INTO user (username, password) VALUES (?,?)', 
         [username, password], (err, result) => {
             if (err){
                 console.log(err);
