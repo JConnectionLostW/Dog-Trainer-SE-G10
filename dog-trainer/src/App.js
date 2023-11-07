@@ -8,6 +8,7 @@ import HomePage from './Components/HomePage';
 import NavBar from './Components/Navbar';
 import Account from './Components/Account';
 import useToken from './Components/useToken';
+import { Auth0Provider } from '@auth0/auth0-react';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
   
   return (
     <div className='App'>
+      <Auth0Provider>
         <NavBar/>
       <div>
         <Router>
@@ -37,6 +39,7 @@ function App() {
             </Routes>
         </Router>
       </div>
+    </Auth0Provider>
     </div>
   );
 }
