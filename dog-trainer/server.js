@@ -1,7 +1,3 @@
-// this creates a local api to fetch a user token
-// it then calls the api from login and renders it
-// after successful retrieval of token
-// 
 
 const express = require('express');
 const mysql = require('mysql2');//added mysql path 
@@ -16,7 +12,7 @@ const db = mysql.createConnection({
     user: "root",
     host: "localhost",
     password: "root66",
-    database: "pawsonaltrainer",
+    database: "test_db",
 })
 
     app.post('/create', (req, res) => {
@@ -31,17 +27,6 @@ const db = mysql.createConnection({
         }
     });
 })
-
-
-
-//create listening path and callback function
-// that runs when serving the path
-//app.use('/login', (req, res) => {
-//    res.send({
-//        //token being returned as JSON object
-//        token: 'test123'
-//    });
-//});
 
 //run server on test port
 app.listen(8080, () => console.log('API is running on http://localhost:8080/create'));

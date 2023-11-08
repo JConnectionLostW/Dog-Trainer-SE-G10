@@ -2,13 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import './Components/Navbar.css';
-import Login from './Components/Login';
-import Register from './Components/Register';
 import HomePage from './Components/HomePage';
 import NavBar from './Components/Navbar';
 import Account from './Components/Account';
-import useToken from './Components/useToken';
-import { Auth0Provider } from '@auth0/auth0-react';
+import Chat from './Components/Chat';
 
 
 function App() {
@@ -27,19 +24,18 @@ function App() {
   
   return (
     <div className='App'>
-      <Auth0Provider>
+      
         <NavBar/>
       <div>
         <Router>
             <Routes>
               <Route path="/" element={<HomePage />}/>
-              <Route path ="/Register" element={<Register />} />
-              <Route path="/Login" element={<Login />} />
+              <Route path='/Chat' element= {<Chat />}/>
               <Route path='/Account' element={<Account />} />
             </Routes>
         </Router>
       </div>
-    </Auth0Provider>
+    
     </div>
   );
 }
