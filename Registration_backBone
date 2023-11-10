@@ -1,4 +1,60 @@
-public UserRegistration() {
+package com.javaguides.javaswing.reg;
+
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+/**
+ * User Registration using Swing
+ * @author javaguides.net
+ *
+ */
+public class UserRegistration extends JFrame {
+    private static final long serialVersionUID = 1L;
+    private JPanel contentPane;
+    private JTextField firstname;
+    private JTextField lastname;
+    private JTextField email;
+    private JTextField username;
+    private JTextField mob;
+    private JPasswordField passwordField;
+    private JButton btnNewButton;
+
+    /**
+     * Launch the application.
+     */
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    UserRegistration frame = new UserRegistration();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    /**
+     * Create the frame.
+     */
+
+    public UserRegistration() {
         setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\Desktop\\STDM.jpg"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(450, 190, 1014, 597);
@@ -95,3 +151,29 @@ public UserRegistration() {
                 if (len != 10) {
                     JOptionPane.showMessageDialog(btnNewButton, "Enter a valid mobile number");
                 }
+
+                try {
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/swing_demo", "root", "root");
+
+                    String query = "INSERT INTO account values('" + firstName + "','" + lastName + "','" + userName + "','" +
+                        password + "','" + emailId + "','" + mobileNumber + "')";
+
+                    Statement sta = connection.createStatement();
+                    int x = sta.executeUpdate(query);
+                    if (x == 0) {
+                        JOptionPane.showMessageDialog(btnNewButton, "This is alredy exist");
+                    } else {
+                        JOptionPane.showMessageDialog(btnNewButton,
+                            "Welcome, " + msg + "Your account is sucessfully created");
+                    }
+                    connection.close();
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
+            }
+        });
+        btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
+        btnNewButton.setBounds(399, 447, 259, 74);
+        contentPane.add(btnNewButton);
+    }
+}
