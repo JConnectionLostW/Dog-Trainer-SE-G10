@@ -3,10 +3,7 @@ const express = require('express');
 const mysql = require('mysql2');//added mysql path 
 const app = express();
 const cors = require('cors');
-
-app.use(cors());
-app.use(express.json());
-
+const PORT = process.env.PORT || 8080;
 
 const db = mysql.createConnection({
     user: "root",
@@ -15,18 +12,21 @@ const db = mysql.createConnection({
     database: "test_db",
 })
 
-    app.post('/create', (req, res) => {
-        const username = req.body.username;
-        const password = req.body.password;
+app.use(cors());
+app.use(express.json());
 
-        db.query('INSERT INTO user (username, password) VALUES (?,?)', 
-        [username, password], (err, result) => {
+    app.get('/api/create', (req, res) => {
+        const searchTerm = req.query.search || '';
+        const query = `SELECT * FROM dog_breeds WHERE breed_name LIKE '%${searchTerm}%'`;
+
+        db.query(query, (err, results) => {
             if (err){
                 console.log(err);
-            } else {res.send("val inserted");
+                res.status(500).json({error: 'Internal Server Error'});
+            } else {res.json(results);
         }
     });
 })
 
 //run server on test port
-app.listen(8080, () => console.log('API is running on http://localhost:8080/create'));
+app.listen(PORT, () => console.log('API is running on port ${PORT}'));
