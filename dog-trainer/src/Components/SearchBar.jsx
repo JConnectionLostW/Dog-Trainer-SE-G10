@@ -4,17 +4,19 @@ import './SearchBar.css';
 const SearchBar = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState([]);
+const [isDataFetched, setIsDataFetched] = useState(false);
 
   //searchbar does connect to db but its still running into "key" issues
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/create?search=${searchTerm}');
+      const response = await fetch('http://localhost:8080/api/create');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       
       const data = await response.json();
       setData(data);
+      setIsDataFetched(true);
       console.log(data);
     } catch (error) {
       console.error('Error fetching data:', error.message);
@@ -28,28 +30,39 @@ const SearchBar = () => {
 
   return (
     <div>
-      <input type='text' placeholder='Find a Dog...' value={searchTerm} onChange={handleSearchChange} />
-      <button onClick={fetchData}>Search</button>
-      <ul>
-        {data.map((item, index) => (
-          <li key={index}>
-            <strong>{item.name}</strong>: {item.description}
-          </li>
-        ))}
-      </ul>
+      <div className='input-wrapper'>
+        <input type='text' placeholder='Find a Dog...' value={searchTerm} onChange={handleSearchChange} />
+        <div>
+          <button onClick={fetchData}>Search</button>
+        </div>
+      </div>
+      
+      {isDataFetched && (
+        <div>
+          <h2>Search Results:</h2>
+          <ul className='resultList'>
+            {data.map((item) => (
+              <li key={item.breed_id}>
+                <strong>{item.breed_name}</strong>: {item.temperament}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 
 export default SearchBar;
+
 /*const SearchBar = () => {
   const [input, setInput] = useState("");
   const fetchData = (value) => {
-    fetch("https://jsonplaceholder.typicode.com/users").then((response) => response.json()).then((json) => {
+    fetch("http://localhost:8080/api/create").then((response) => response.json()).then((json) => {
       const results = json.filter((user) => {
         return (
-          value && user && user.name && user.name.toLowerCase().includes(value)
+          value && user && user.name && user.name.includes(value)
         );
       });
       console.log(results);

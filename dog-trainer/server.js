@@ -27,6 +27,13 @@ app.use(express.json());
         }
     });
 })
+db.connect(err => {
+    if (err) {
+        console.error('Error connecting to MySQL database:', err);
+        return;
+    }
+    console.log('Connected to MySQL database');
+});
 
 //run server on test port
 app.listen(PORT, () => console.log('API is running on port ${PORT}'));

@@ -1,15 +1,19 @@
 .App {
-    background-color: rgb(255, 255, 255);
-    height: 100%;
-    width: 100%;
+    background-image: url(d:\Software_Eng_Proj\Dog-Trainer-SE-G10\dog-trainer\src\Images\myDogBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
     align-items: center;
     justify-content: center;
 }
 
 h1 {
   margin: 5px;
+  color: burlywood;
 }
 
 p {
   margin-left: 5px;
+  color: burlywood;
 }

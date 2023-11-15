@@ -4,9 +4,9 @@
     height: 2rem;
     padding-top: 5px;
     box-sizing: content-box;
-    width: 104vh;
+    width: 60vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     box-shadow: 0px 0px 8px #ddd;
     min-height: fit-content;
@@ -24,4 +24,20 @@ input {
 
 input:focus {
     outline: none;
+}
+
+button {
+    background-color: burlywood;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.resultList {
+    display: flex;
+    flex-direction: column;
+    color: burlywood;
+    background: transparent;
+    width: 60vw;
+    border-radius: 10px;
 }
