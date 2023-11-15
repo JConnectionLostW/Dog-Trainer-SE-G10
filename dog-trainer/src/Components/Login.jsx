@@ -1,40 +1,42 @@
 /*import React, { useState } from 'react';
-import PropTypes from 'prop-types'; //allows use of setToken prop
+const LoginPage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleLogin = async () => {
+    // Basic validation
+    if (!username || !password) {
+      setError('Please enter both username and password.');
+      return;
+    }
 
 //function that makes a post request to server
 
-async function loginUser(credentials) {
+try {
   //connects to server to fetch
-  return fetch('http://localhost:8080/login', {
+  const response = await fetch('http://localhost:8080/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(credentials)
-  })
-    .then(data => data.json())
- }
-
-export default function Login({setToken}){
-  // State to store user input
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-//create form submit handler to do logins
-//then call it later with form onSubmit
-  const handleLogin = async e => {
-    e.preventDefault();
-    // You would typically perform authentication here
-    //console.log('Username:', username); old data
-    //console.log('Password:', password); old data
-     // username,
-      //password
-  ;
-  //setToken(token);
-  Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
-  };
+    body: JSON.stringify({ username, password}),
+  });
+  
+  if (response.ok) {
+        // Authentication successful, handle the result (e.g., store token)
+        const data = await response.json();
+        console.log('Token:', data.token);
+        setError('');
+  } else {
+        // Authentication failed, handle the error
+        setError('Invalid username or password.');
+  }
+    } catch (error) {
+      console.error('Login error:', error);
+      setError('Error during login. Please try again later.');
+    }
+  };  
 
   return (
     <div>

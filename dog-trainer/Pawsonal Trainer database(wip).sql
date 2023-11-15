@@ -32,12 +32,20 @@ foreign key(BId) references Business(BId)
 
 #table Customer
 create table Customer(
-cId int primary key
+cId int AUTO_INCREMENT primary key,
 name varchar(255),
-address varchar(255),
-phone int,
 email varchar(255),
 );
+
+#create table for id and password kept separate for security
+CREATE TABLE credentials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT UNIQUE,
+  username VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES Customer(cId)
+);
+
 
 #table Dog
 create table Dog(
@@ -74,11 +82,20 @@ foreign key(svcId) references Service(sId),
 #Insert data for Customer
 insert into customer
 VALUES 
-	(1, 'Alice Haynes', '461-658-5116', 'ahaynes@email.com'),
-	(2, 'Ryan Johnson', '764-466-1163', 'rjohnson@email.com'),
-	(3, 'Jacob Thompson', '941-664-6618', 'jthompson@email.com'),
-	(4, 'Wally Anderson', '946-648-1665', 'wanderson@email.com'),
-	(5, 'Crystal Summers', '544-646-1616', 'csummers@email.com');
+	(1, 'Alice Haynes', 'ahaynes@email.com'),
+	(2, 'Ryan Johnson', 'rjohnson@email.com'),
+	(3, 'Jacob Thompson', 'jthompson@email.com'),
+	(4, 'Wally Anderson', 'wanderson@email.com'),
+	(5, 'Crystal Summers', 'csummers@email.com');
+
+#Insert data for credentials
+insert into credentials
+VALUES
+	(1, 'ahaynes@gmail.com', 'H100just!a'),
+	(2, 'rjohnson@gmail.com', 'K200icey?b'),
+	(3, 'jthompson@gmail.com', 'Z300star#c'),
+	(4, 'wanderson@gmail.com', 'Y400moon!d'),
+	(5, 'csummers@gmail.com', 'X500sun7?e');
 
 #Insert data for Dog
 INSERT INTO Dog
