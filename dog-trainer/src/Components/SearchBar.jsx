@@ -3,10 +3,10 @@ import './SearchBar.css';
 
 const SearchBar = () => {
   const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState([]);
-const [isDataFetched, setIsDataFetched] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredData, setFilteredData] = useState([]);
+  const [isDataFetched, setIsDataFetched] = useState(false);
 
-  //searchbar does connect to db but its still running into "key" issues
   const fetchData = async () => {
     try {
       const response = await fetch('http://localhost:8080/api/create');
@@ -17,16 +17,26 @@ const [isDataFetched, setIsDataFetched] = useState(false);
       const data = await response.json();
       setData(data);
       setIsDataFetched(true);
-      console.log(data);
     } catch (error) {
       console.error('Error fetching data:', error.message);
-      
     }
   };
 
   const handleSearchChange = (event) => {
-    setSearchTerm(event.target.value);
-  }
+    const searchTerm = event.target.value;
+    setSearchTerm(searchTerm);
+
+    // Filter data based on the search term
+    const filteredResults = data.filter((dog) =>
+      dog.breed_name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setFilteredData(filteredResults);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div>
@@ -41,9 +51,9 @@ const [isDataFetched, setIsDataFetched] = useState(false);
         <div>
           <h2>Search Results:</h2>
           <ul className='resultList'>
-            {data.map((item) => (
-              <li key={item.breed_id}>
-                <strong>{item.breed_name}</strong>: {item.temperament}
+            {filteredData.map((dog) => (
+              <li key={dog.breed_id}>
+                <strong>{dog.breed_name}</strong>: {dog.country_of_origin} , {dog.size} , {dog.temperament} , {dog.lifespan} , {dog.common_colors}
               </li>
             ))}
           </ul>
@@ -53,8 +63,8 @@ const [isDataFetched, setIsDataFetched] = useState(false);
   );
 };
 
-
 export default SearchBar;
+
 
 /*const SearchBar = () => {
   const [input, setInput] = useState("");

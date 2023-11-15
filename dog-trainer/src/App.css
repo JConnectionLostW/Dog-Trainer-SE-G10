@@ -1,5 +1,5 @@
 .App {
-    background-image: url(d:\Software_Eng_Proj\Dog-Trainer-SE-G10\dog-trainer\src\Images\myDogBG.jpg);
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -10,10 +10,10 @@
 
 h1 {
   margin: 5px;
-  color: burlywood;
+  color: black;
 }
 
 p {
   margin-left: 5px;
-  color: burlywood;
+  color: black;
 }
