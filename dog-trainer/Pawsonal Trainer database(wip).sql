@@ -90,6 +90,15 @@ VALUES
 	(4, 'Wally Anderson', '946-648-1665', 'wanderson@email.com'),
 	(5, 'Crystal Summers', '544-646-1616', 'csummers@email.com');
 
+#Insert data for credentials
+insert into credentials
+VALUES
+	(1, 'ahaynes@gmail.com', 'H100just!a'),
+	(2, 'rjohnson@gmail.com', 'K200icey?b'),
+	(3, 'jthompson@gmail.com', 'Z300star#c'),
+	(4, 'wanderson@gmail.com', 'Y400moon!d'),
+	(5, 'csummers@gmail.com', 'X500sun7?e');
+
 #Insert data for Dog
 INSERT INTO Dog
 VALUES
