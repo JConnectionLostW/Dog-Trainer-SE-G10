@@ -34,8 +34,6 @@ foreign key(BId) references Business(BId)
 create table Customer(
 cId int AUTO_INCREMENT primary key,
 name varchar(255),
-address varchar(255),
-phone int,
 email varchar(255),
 );
 
@@ -84,11 +82,11 @@ foreign key(svcId) references Service(sId),
 #Insert data for Customer
 insert into customer
 VALUES 
-	(1, 'Alice Haynes', '461-658-5116', 'ahaynes@email.com'),
-	(2, 'Ryan Johnson', '764-466-1163', 'rjohnson@email.com'),
-	(3, 'Jacob Thompson', '941-664-6618', 'jthompson@email.com'),
-	(4, 'Wally Anderson', '946-648-1665', 'wanderson@email.com'),
-	(5, 'Crystal Summers', '544-646-1616', 'csummers@email.com');
+	(1, 'Alice Haynes', 'ahaynes@email.com'),
+	(2, 'Ryan Johnson', 'rjohnson@email.com'),
+	(3, 'Jacob Thompson', 'jthompson@email.com'),
+	(4, 'Wally Anderson', 'wanderson@email.com'),
+	(5, 'Crystal Summers', 'csummers@email.com');
 
 #Insert data for credentials
 insert into credentials
