@@ -105,3 +105,11 @@ VALUES
 		(3, 'Mark', 'pitbull', 3),
 		(4, 'Snowy', 'pitbull', 4), 
 		(5, 'Kent', 'golden retriever', 5); 
+
+#insert data for Foods
+INSERT INTO Foods
+VALUES
+	(1, 'Royal Canin Size Health Nutrition Small Adult Formula Dog Food', 'none'),
+	(2, 'chicken', 'proteins'),
+	(3, 'cooked eggs', 'watch for salmonella'),
+	(4, 'cheese', 'dairy');
