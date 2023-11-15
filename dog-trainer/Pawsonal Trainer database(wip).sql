@@ -32,12 +32,22 @@ foreign key(BId) references Business(BId)
 
 #table Customer
 create table Customer(
-cId int primary key
+cId int AUTO_INCREMENT primary key,
 name varchar(255),
 address varchar(255),
 phone int,
 email varchar(255),
 );
+
+#create table for id and password kept separate for security
+CREATE TABLE credentials (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT UNIQUE,
+  username VARCHAR(255) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES Customer(cId)
+);
+
 
 #table Dog
 create table Dog(
