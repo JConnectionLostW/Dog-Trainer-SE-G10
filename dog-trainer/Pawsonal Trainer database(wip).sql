@@ -84,6 +84,12 @@ CREATE TABLE dog_breeds (
     shedding_level VARCHAR(255)
 );
 
+CREATE TABLE videos (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255),
+  url VARCHAR(255)
+);
+
 
 #dummy info for testing
   
@@ -137,6 +143,15 @@ VALUES
     ('Doberman', 'Germany', 'Fearless, Vigilant, Powerful', '10-12', 'Black and Rust, Black, Blue, White', '75-100lbs (male) 60-90lbs (female)', '26-28 inches (male) 24-26 inches (female)', 'monthly', '5/5', '4/5', '4/5', 'short, smooth', '4/5'),
     ('Miniature Schnauzer', 'Germany', 'Outgoing, Healthy', '12-15', 'Black Silver, Liver Tan, Salt and Pepper', '11-20 lbs', '12-14 inches', 'monthly', '5/5', '4/5', '4/5', 'medium, wiry/double', '3/5'),
     ('Cane Corso', 'Italy', 'Assertive, Confident', '9-12', 'Fawn, Red, Black(or Gray) Brindle', 'proportionate to height', '25-27.5 inches (male) 23.5-26 inches (female)', 'monthly', '4/5', '3/5', '3/5', 'short, smooth', '2/5')
+;
+
+INSERT INTO videos(title, url)
+VALUES
+        ('How to Teach your Puppy to Sit and Stay', 'https://www.youtube.com/watch?v=DPNz6reMVXY'),
+        ('How to leash train your puppy or dog. || Monkoodog', 'https://www.youtube.com/watch?v=XWHwt575ZgQ'),
+        ('The EASIEST way to Teach Your Dog to ROLL OVER! | How to teach your dog to roll over', 'https://www.youtube.com/watch?v=IsJ0VdeOJcg'),
+        ('How to Teach Your Dog to Walk to Heel In Seconds', 'https://www.youtube.com/watch?v=ftI0MidR4oE'),
+        ('THIS is how to train your REACTIVE DOG!', 'https://www.youtube.com/watch?v=y6OzuPEPQXo')
 ;
 
 SELECT * FROM dog_breeds;
