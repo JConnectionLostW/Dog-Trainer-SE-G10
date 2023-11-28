@@ -136,7 +136,7 @@ VALUES
     ('Cavalier Spaniel', 'United Kingdom', 'Attentive, Athletic', '12-15', 'Blenheim, Black and Tan, Ruby, Tri-Color', '13-18 lbs', '12-13 inches', '4/5', '3/5', '3/5', 'medium, wavy-silky', '2/5'),
     ('Doberman', 'Germany', 'Fearless, Vigilant, Powerful', '10-12', 'Black and Rust, Black, Blue, White', '75-100lbs (male) 60-90lbs (female)', '26-28 inches (male) 24-26 inches (female)', 'monthly', '5/5', '4/5', '4/5', 'short, smooth', '4/5'),
     ('Miniature Schnauzer', 'Germany', 'Outgoing, Healthy', '12-15', 'Black Silver, Liver Tan, Salt and Pepper', '11-20 lbs', '12-14 inches', 'monthly', '5/5', '4/5', '4/5', 'medium, wiry/double', '3/5'),
-    ('Cane Corso', 'Italy', 'Assertive, Confident', '9-12', 'Fawn, Red, Black(or Gray) Brindle', 'proportionate to height', 25-27.5 inches (male) 23.5-26 inches (female)', 'monthly', '4/5', '3/5', '3/5', 'short, smooth', '2/5')
+    ('Cane Corso', 'Italy', 'Assertive, Confident', '9-12', 'Fawn, Red, Black(or Gray) Brindle', 'proportionate to height', '25-27.5 inches (male) 23.5-26 inches (female)', 'monthly', '4/5', '3/5', '3/5', 'short, smooth', '2/5')
 ;
 
 SELECT * FROM dog_breeds;
