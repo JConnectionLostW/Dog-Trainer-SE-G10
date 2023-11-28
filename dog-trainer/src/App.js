@@ -7,7 +7,6 @@ import NavBar from './Components/Navbar';
 import Account from './Components/Account';
 import Chat from './Components/Chat';
 
-
 function App() {
   //This section is still in progress
   // this sets a token for the login page using useToken

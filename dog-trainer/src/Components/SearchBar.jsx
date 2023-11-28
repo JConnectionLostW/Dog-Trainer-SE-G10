@@ -43,7 +43,7 @@ const SearchBar = () => {
       <div className='input-wrapper'>
         <input type='text' placeholder='Find a Dog...' value={searchTerm} onChange={handleSearchChange} />
         <div>
-          <button onClick={fetchData}>Search</button>
+         
         </div>
       </div>
       
@@ -64,32 +64,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-
-
-/*const SearchBar = () => {
-  const [input, setInput] = useState("");
-  const fetchData = (value) => {
-    fetch("http://localhost:8080/api/create").then((response) => response.json()).then((json) => {
-      const results = json.filter((user) => {
-        return (
-          value && user && user.name && user.name.includes(value)
-        );
-      });
-      console.log(results);
-    });
-  };
-  const handleChange = (value) => {
-    setInput(value)
-    fetchData(value)
-  }
-  return (
-    <div className='input-wrapper'>
-      <input
-      placeholder='Search for a dog breed...'
-      value={input}
-      onChange={(e) => handleChange(e.target.value)}
-      />
-    </div>
-  )
-}
-export default SearchBar;*/
