@@ -139,4 +139,4 @@ VALUES
     ('Cane Corso', 'Italy', '9-12', 'Fawn, Red, Black(or Gray) Brindle', 'proportionate to height', 25-27.5 inches (male) 23.5-26 inches (female)', 'monthly', '4/5', '3/5', '3/5', 'short, smooth', '2/5')
 ;
 
-SELECT * FROM test_db.dog_breeds;
+SELECT * FROM dog_breeds;
