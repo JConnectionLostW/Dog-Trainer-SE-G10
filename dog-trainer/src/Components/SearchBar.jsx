@@ -50,10 +50,10 @@ const SearchBar = () => {
       {isDataFetched && (
         <div>
           <h2>Search Results:</h2>
-          <ul className='resultList'>
+          <ul>
             {filteredData.map((dog) => (
               <li key={dog.breed_id}>
-                <strong>{dog.breed_name}</strong>: {dog.country_of_origin} , {dog.size} , {dog.temperament} , {dog.lifespan} , {dog.common_colors}
+                <strong>{dog.breed_name}</strong>: {dog.country_of_origin} , {dog.temperament} , {dog.lifespan} , {dog.common_colors} , {dog.weight} , {dog.height}, {dog.grooming} , {dog.trainability} , {dog.social_level} , {dog.mental_stimulation_needs} , {dog.coat_length} , {dog.shedding_level} , {dog.videos}
               </li>
             ))}
           </ul>

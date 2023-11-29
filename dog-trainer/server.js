@@ -3,8 +3,8 @@ const express = require('express');
 const mysql = require('mysql2');//added mysql path 
 const app = express();
 //add bcrypt and jwt for encryption of password and creation of token respectively
-//const bcrypt = require('bcrypt');
-//const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const PORT = process.env.PORT || 8080;
 
@@ -39,7 +39,7 @@ db.connect(err => {
 });
 //start of changes
 // Registration
-/*app.post('/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, email, username, password } = req.body;
 
   // Store user information (refer to database for Customer before inserting
@@ -95,6 +95,6 @@ app.post('/login', (req, res) => {
     }
   });
 });
-//end of changes*/
+//end of changes
 //run server on test port
 app.listen(PORT, () => console.log('API is running on port ${PORT}'));
