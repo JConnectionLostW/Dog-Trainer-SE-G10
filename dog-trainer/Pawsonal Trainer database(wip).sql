@@ -84,7 +84,7 @@ CREATE TABLE dog_breeds (
     shedding_level VARCHAR(255)
 );
 
-CREATE TABLE videos (
+CREATE TABLE dog_videos (
   id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(255),
   url VARCHAR(255),
@@ -147,7 +147,7 @@ VALUES
     ('Cane Corso', 'Italy', 'Assertive, Confident', '9-12', 'Fawn, Red, Black(or Gray) Brindle', 'proportionate to height', '25-27.5 inches (male) 23.5-26 inches (female)', 'monthly', '4/5', '3/5', '3/5', 'short, smooth', '2/5')
 ;
 
-INSERT INTO videos(title, url)
+INSERT INTO dog_videos(title, url)
 VALUES
         ('How to Teach your Puppy to Sit and Stay', 'https://www.youtube.com/watch?v=DPNz6reMVXY'),
         ('How to leash train your puppy or dog. || Monkoodog', 'https://www.youtube.com/watch?v=XWHwt575ZgQ'),
