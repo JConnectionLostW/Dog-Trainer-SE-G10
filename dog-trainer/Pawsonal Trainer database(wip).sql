@@ -87,7 +87,9 @@ CREATE TABLE dog_breeds (
 CREATE TABLE videos (
   id INT PRIMARY KEY AUTO_INCREMENT,
   title VARCHAR(255),
-  url VARCHAR(255)
+  url VARCHAR(255),
+  dbid int,
+  foreign key(dbid) references dog_breeds(breed_id)
 );
 
 
