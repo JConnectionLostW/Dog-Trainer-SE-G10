@@ -1,0 +1,17 @@
+Quick Intro and Description
+Project Name: Pawsonal Trainer
+Group 10
+Authors/Members: Roberto Garcia, Herbert Lopez, Jordan Ward, Onye Uhiara
+
+Short Description: This project is made to help dog owners, both new and old,
+gain a better understanding of how to better take care of their dog.
+This uses a database filled with data of different dog breeds, along
+with different programming languages to create a website that shows
+information and video links to learn about and train your dog.
+
+Quick Overview of what is created: A homepage that contains a searchbar that
+will pull up information of dog breeds, the login page that will sign in the
+user, as well as a registration page to add new users. There is also a chat
+page in development to allow communication between users.
+
+For more info on how to run the project, please read the readme
